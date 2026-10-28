@@ -1,13 +1,4 @@
 
-FROM python:3.10-slim
-
-ENV PYTHONDONTWRITEBENV PYTHONUNBUFFERED=1
-
-WORKDIR /app
-
-COPY requirements.txt .
-
-# Install tools and upgrade vulnerable Python packaging packages
 FROM python:3.12-slim
 
 ENV PYTHONDONTWRITEBYTECODE=1
@@ -29,3 +20,4 @@ RUN useradd --create-home appuser \
 USER appuser
 
 CMD ["python", "app.py"]
+
